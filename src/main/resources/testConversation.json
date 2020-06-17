@@ -1,0 +1,48 @@
+{
+   "messageType": "testConversation",
+   "tree": { 
+      "nodeId": 0,
+      "message": "Hey there. You busy?",
+      "responses": {
+         "(yes|yeah)": {
+            "nodeId": 1, 
+            "message": "Oh. Sorry to bother you, then.  Talk to you later.",
+            "responses": {}
+         }, 
+         "(No|no|nah|n)": {
+            "nodeId": 2,
+            "message": "Do you want to meet for lunch?",
+            "responses": {
+               "(no|nah|cant)": {
+                  "nodeId": 3,
+                  "message": "Ah, too bad.  I'll talk to you later.",
+                  "responses": {}
+               },
+               "(yes|yeah|sure)": {
+                  "nodeId": 4,
+                  "message": "Great!  Where would you like to go?  I'm thinking Texas Roadhouse or Famous Dave's.",
+                  "responses": {
+                     "(Texas|Famous)": {
+                        "nodeId": 5,
+                        "message": "Sounds good.  I'll see you there!",
+                        "responses": {}
+                     },
+                     ".*": {
+                        "nodeId": 6,
+                        "message": "I don't know that place.  Can you send me the address?",
+                        "responses": {
+                           ".*": {
+                              "nodeId": 7,
+                              "message": "Ok, I'll google it and meet you there.",
+                              "responses": {}
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
